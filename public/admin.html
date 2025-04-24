@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Green IT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header inclusion -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eco-actions.html">Eco Actions</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Admin Panel</h1>
+  <div id="adminControls" style="display: none;">
+    <h2>Add New Action</h2>
+    <form id="addActionForm">
+      <label>Name: <input type="text" id="actionName" required></label>
+      <label>Description: <textarea id="actionDescription" required></textarea></label>
+      <label>Points: <input type="number" id="actionPoints" required></label>
+      <label>Carbon Saved (g): <input type="number" id="actionCarbon" required></label>
+      <button type="submit">Add Action</button>
+    </form>
+
+    <h2>Delete User</h2>
+    <form id="deleteUserForm">
+      <label>User Email: <input type="email" id="targetEmail" required></label>
+      <button type="submit">Delete User</button>
+    </form>
+
+    <h2>Manage Actions</h2>
+    <div id="allActions"></div>
+  </div>
+  
+  <div id="unauthorized" style="display: none;">
+    <p>You are not authorized to view this page.</p>
+    <a href="dashboard.html">Return to Dashboard</a>
+  </div>
+
+  <!-- Footer inclusion -->
+  <footer>
+    <p>Green IT Mini Project – 2024/2025 | Rights: SANCESARIO Tom, Max Chartier, Musquin Maxime, Iness Bennai, Paul Emile Lamotte Chappon</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

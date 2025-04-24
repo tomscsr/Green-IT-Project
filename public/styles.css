@@ -1,0 +1,132 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  color: #2e8b57;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+form button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #2e8b57;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form button:hover,
+button:hover {
+  background-color: #256d44;
+}
+
+button {
+  background-color: #2e8b57;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#userActions div,
+#actionsList div {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#userActions button,
+#actionsList button {
+  margin-top: 10px;
+}
+
+#carbonTotal {
+  font-weight: bold;
+  color: #006400;
+}
+
+hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+p, label, input, select, button {
+  font-size: 16px;
+}
+
+a {
+  color: #2e8b57;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour le tableau du leaderboard */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #2e8b57;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}

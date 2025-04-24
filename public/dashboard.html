@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Green IT</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header inclusion -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="eco-actions.html">Eco Actions</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Welcome, <span id="userName"></span> 👋</h1>
+  <button onclick="logout()">Logout</button>
+
+  <h2>Submit an Eco-Action</h2>
+  <form id="actionForm">
+    <label>Choose an action:
+      <select id="actionSelect"></select>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+
+  <h2>Your Actions</h2>
+  <div id="userActions"></div>
+
+  <h3>Total Carbon Saved: <span id="carbonTotal">0</span> g CO₂e</h3>
+
+  <!-- Footer inclusion -->
+  <footer>
+    <p>Green IT Mini Project – 2024/2025 | Rights: SANCESARIO Tom, Max Chartier, Musquin Maxime, Iness Bennai, Paul Emile Lamotte Chappon</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
