@@ -1,0 +1,67 @@
+@startuml
+'=== Interfaces and Abstract Base ===
+interface IAuth {
+  + register(): boolean
+  + login(): boolean
+}
+
+interface ITrackable {
+  + getTotalCo2Saved(): double
+  + getPoints(): int
+}
+
+abstract class UserBase {
+  - username: String
+  - passwordHash: String
+  + register(): boolean
+  + login(): boolean
+}
+
+UserBase ..|> IAuth
+
+'=== Concrete Roles ===
+class Guest {
+  + browsePublic(): void
+}
+class Member {
+  - totalCo2Saved: double
+  - points: int
+  + submitAction(a: EcoAction): void
+  + getTotalCo2Saved(): double
+  + getPoints(): int
+}
+class Admin {
+  + manageUsers(): void
+  + manageActions(): void
+}
+
+UserBase <|-- Guest
+UserBase <|-- Member
+UserBase <|-- Admin
+
+Member ..|> ITrackable
+
+'=== Core Domain Classes ===
+class EcoAction {
+  - id: UUID
+  - description: String
+  - co2Saved: double    ’ in grams
+  + getCo2Saved(): double
+}
+
+class Dashboard {
+  + submitAction(a: EcoAction): void
+  + viewStats(): void
+}
+
+class Leaderboard {
+  + getTopUsers(count: int): List<Member>
+  + getRank(m: Member): int
+}
+
+'=== Relationships ===
+Member "1" o-- "*" EcoAction : submissions
+Dashboard ..> EcoAction
+Leaderboard ..> Member
+
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+
+actor Guest as g
+actor Member as m
+actor Admin as a
+
+package "EcoTracker" {
+  usecase "Browse Home-screen, Leaderboard, and eco-actions "      as UC1
+  usecase "Register"                as UC2
+  usecase "Login"                   as UC3
+  usecase "Submit Eco-Action"       as UC4
+  usecase "View Dashboard"          as UC5
+  usecase "View Leaderboard"        as UC6
+}
+
+package "Administration" {
+  usecase "Manage Users"            as UC7
+  usecase "Manage Eco-Actions"      as UC8
+}
+
+g --> UC1
+g --> UC2
+g --> UC3
+
+m --> UC1
+m --> UC3
+m --> UC4
+m --> UC5
+m --> UC6
+
+a --> UC1
+a --> UC3
+a --> UC5
+a --> UC6
+a --> UC7
+a --> UC8
+@enduml
