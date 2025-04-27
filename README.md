@@ -2,7 +2,7 @@
 
 A web application to track eco-friendly actions and their environmental impact, featuring user authentication, action tracking, and a competitive leaderboard system.
 
-Repository Link : [text](https://github.com/tomscsr/green-it-project)
+Repository Link : [Github Link Green IT](https://github.com/tomscsr/green-it-project)
 
 ## Features
 
