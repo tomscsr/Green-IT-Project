@@ -1,0 +1,221 @@
+
+
+
+4th Part 
+
+1)
+because it's one of the most effective ways to evaluate the performance and environmental impact of a local website like ours.
+Lighthouse provides detailed insights on performance, accessibility, best practices, and SEO — all essential for a well-optimized site.
+Ecoping complements this by estimating the eco-impact of each page in terms of data transfer, number of requests, and estimated CO₂ emissions, which helps us stay conscious of our website's environmental footprint.
+Together, these tools allowed us to assess our site both technically and ecologically, without needing to host it live first.
+
+
+
+
+1. Home page (before optimization)
+   - File size: 1.2MB
+   - Requests: 15
+   - Load time: 29 ms
+   - Eco score: 75/100
+   - Estimated CO₂: ~0.15 g per load
+   - Energy-consuming elements:
+     - The page size is relatively large at 1.2MB.
+     - 15 HTTP requests increase the network load and loading time.
+     - Heavy JavaScript scripts (external libraries, complex animations) contribute to energy consumption.
+
+---
+
+2. Eco action page (before optimization)
+   - File size: 1.1MB
+   - Requests: 18
+   - Load time: 39 ms
+   - Eco score: 72/100
+   - Estimated CO₂: ~0.18 g per load
+   - Energy-consuming elements:
+     - Page size at 1.1MB.
+     - 18 HTTP requests increase the number of resources to load.
+     - Several JavaScript scripts for interacting with eco actions increase the overall weight and energy consumption.
+
+---
+
+3. Leaderboard page (before optimization)
+   - File size: 1.3MB
+   - Requests: 20
+   - Load time: 21 ms
+   - Eco score: 70/100
+   - Estimated CO₂: ~0.22 g per load
+   - Energy-consuming elements:
+     - The page weight at 1.3MB is relatively high for a leaderboard page.
+     - 20 HTTP requests, including many external resources (images, styles, ranking APIs).
+     - Heavy JavaScript scripts for dynamically updating rankings, impacting performance.
+
+---
+
+4. Login page (before optimization)
+   - File size: 800KB
+   - Requests: 12
+   - Load time: 12 ms
+   - Eco score: 78/100
+   - Estimated CO₂: ~0.14 g per load
+   - Energy-consuming elements:
+     - File size is relatively moderate at 800KB.
+     - 12 requests is still reasonable, but several external resources (validation scripts) add extra weight.
+     - Some JavaScript scripts (authentication validation) are slightly heavy.
+
+---
+
+5. Register page (before optimization)
+   - File size: 950KB
+   - Requests: 14
+   - Load time: 49 ms
+   - Eco score: 76/100
+   - Estimated CO₂: ~0.16 g per load
+   - Energy-consuming elements:
+     - File size at 950KB, higher than necessary for a registration page.
+     - 14 HTTP requests, some for external APIs (e.g., email validation).
+     - JavaScript scripts that check form field validity and interact with databases, slowing the load time.
+
+---
+
+6. Dashboard page (before optimization)
+   - File size: 1.6MB
+   - Requests: 25
+   - Load time: 34 ms
+   - Eco score: 60/100
+   - Estimated CO₂: ~0.30 g per load
+   - Energy-consuming elements:
+     - Very heavy page size of 1.6MB, mainly due to graphics and dynamic data.
+     - 25 HTTP requests, especially for retrieving data via APIs and multimedia files.
+     - Heavy JavaScript scripts to render real-time data visualizations, affecting both performance and energy consumption.
+
+---
+
+7. Admin page (before optimization)
+   - File size: 1.1MB
+   - Requests: 18
+   - Load time: 29 ms
+   - Eco score: 74/100
+   - Estimated CO₂: ~0.17 g per load
+   - Energy-consuming elements:
+     - File size at 1.1MB, which can be optimized by reducing unnecessary resources.
+     - 18 HTTP requests with database management and dashboard scripts.
+     - Several JavaScript scripts for interaction with admin features (real-time data loading, interactive dashboards).
+
+---
+
+dentifying the most energy-consuming elements:
+- Page size: Heavy pages (like the Dashboard page at 1.6MB) are a significant factor. Images, graphics, videos, and unoptimized CSS/JS files contribute to the large size.
+- Number of HTTP requests: A high number of requests (especially on the Dashboard page with 25 requests) adds to the load time and increases energy consumption.
+- Heavy JavaScript scripts: Pages with dynamic content, like the Dashboard and Leaderboard, rely on heavy JavaScript scripts for real-time interactions, which slows down loading times and increases energy consumption.
+- External APIs and resources: Integrating external APIs and resources, especially when numerous (such as form validation or real-time updates), generates additional energy consumption due to server response times and the number of requests.
+
+
+
+
+2)
+
+
+Analysis of the Impact of the Database on Energy Performance
+
+The website uses a SQL database to dynamically load content such as user information, page data, or product listings. While this offers flexibility and responsiveness, it can also lead to increased energy usage due to frequent data exchanges between the frontend and backend systems.
+
+Each database query consumes processing power and contributes to overall server load. This energy consumption can be amplified by inefficient queries—such as broad `SELECT ` statements—or excessive and repetitive data calls. Moreover, if these queries are made synchronously or without caching, they place additional pressure on both the database server and network infrastructure.
+
+To reduce this impact, we have intentionally taken steps during development to avoid unnecessary data usage and interactions with the database. For example, we avoided loading large datasets all at once, and instead applied pagination and filtered queries. Additionally, we limited the amount of data retrieved by targeting only the necessary columns, rather than using full-table queries. These decisions were made to keep database activity as efficient and energy-conscious as possible.
+
+Proposed Solutions to Further Reduce Environmental Impact
+
+To continue improving energy efficiency and lowering the environmental footprint of the website, we propose the following optimizations across both backend and frontend:
+
+
+
+  Backend / Database-Side Improvements:
+
+1. Query Optimization:
+   - Replace `SELECT ` with specific column selections to minimize transferred data.
+   - Use indexes and optimized queries to reduce processing time.
+   - Combine related queries into single operations where applicable.
+
+2. Reduce Redundancy:
+   - Avoid multiple calls for the same data.
+   - Group data retrieval into single, efficient queries when possible.
+
+3. Caching:
+   - Implement server-side caching for static or infrequently updated content.
+   - Use memory caching systems such as Redis to reduce unnecessary database loads.
+
+4. Pagination and Limits:
+   - Apply pagination or `LIMIT` clauses to prevent full-table data loads.
+   - Dynamically load content only when needed.
+
+5. Connection Efficiency:
+   - Use database connection pooling to minimize overhead.
+
+
+
+  Frontend Optimizations:
+
+1. Image Optimization:
+   - Compress images and convert them to more efficient formats like WebP.
+   - Use responsive image sizes to avoid loading unnecessarily large files.
+
+2. Lazy Loading:
+   - Load images and heavy content only when needed with the `loading="lazy"` attribute.
+
+3. Code Minimization:
+   - Minify and bundle JavaScript and CSS files to reduce load time and bandwidth usage.
+
+4. Efficient Scripting:
+   - Remove unused libraries and scripts.
+   - Load non-critical scripts asynchronously (`async`) or defer them (`defer`).
+
+5. Fewer Requests:
+   - Combine files and use inline critical resources to reduce HTTP requests.
+
+
+
+By carefully analyzing how the database is used and implementing thoughtful optimizations in both the backend and frontend, we have already taken key steps to reduce the website's environmental footprint. The deliberate decision to avoid redundant queries, limit unnecessary data loads, and optimize content delivery reflects a commitment to eco-responsible web development.
+
+Going further, additional technical improvements such as caching, image compression, and script management will ensure that the website remains fast, efficient, and sustainable. These choices not only enhance performance but also align with broader goals of digital sustainability and responsible design.
+
+
+
+5th part
+
+
+
+Functional Testing:
+We’ve thoroughly tested the forms on the website to ensure they are functioning as expected. All CRUD (Create, Read, Update, Delete) operations work smoothly, allowing users to easily submit, view, edit, and delete data without any issues. The forms are responsive, the data is correctly processed, and there are no errors during any of these actions, ensuring a seamless user experience.
+
+
+
+ After optimization 
+
+Home page : 309KB, 3 request, total booking time 0 ms →not too heavy
+→ Eco score : 95/100
+→ CO₂ estimé : ~0.062 g per loading
+
+Eco action page : 310KB, 5 request, total booking time 0 ms →not too heavy
+→ Eco score : 95/100
+→ CO₂ estimé : ~0.062 g per loading
+
+Leader board page : 310KB, 5 request, total booking time 0 ms →not too heavy
+→ Eco score : 95/100
+→ CO₂ estimé : ~0.062 g per loading
+
+Login page : 310KB, 4 request, total booking time 0 ms →not too heavy
+→ Eco score : 95/100
+→ CO₂ estimé : ~0.062 g per loading
+
+Register page : 310KB, 4 request, total booking time 0 ms →not too heavy
+→ Eco score : 95/100
+→ CO₂ estimé : ~0.062 g per loading
+
+Dashboard page : 312KB, 10 request, total booking time 0 ms →not too heavy
+→ Eco score : 90/100
+→ CO₂ estimé : ~0.062 g per loading
+
+→ Each adding of actions increase the weight and the number of requests
+Admin page : 310KB, 5 request, total booking time 0 ms →not too heavy
+→ Eco score : 95/100
+→ CO₂ estimé : ~0.062 g per loading
